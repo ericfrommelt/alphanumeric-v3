@@ -1,0 +1,9 @@
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="recBox">
+  <path d="M61 41H41V61H61V41Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M71 31H31V71H71V31Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M81 21H21V81H81V21Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M91 11H11V91H91V11Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+  <path d="M101 1H1V101H101V1Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+</g>
+</svg>

@@ -66,6 +66,10 @@ export default {
   build: {
   },
 
+  generate: {
+    dir: 'dist'
+  },
+
   // Image Configuration: https://image.nuxtjs.org/api/options
   image: {
     screens: {

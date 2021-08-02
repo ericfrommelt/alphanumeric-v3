@@ -35,13 +35,20 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     'nuxt-gsap-module',
-    '@nuxt/image'
+    '@nuxt/image',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-103157530-1'
+    }]
   ],
 
   gsap: {
+    extraPlugins: {
+      scrollTrigger: true
+    },
     clubPlugins: {
       customEase: true,
       drawSVG: true,
+      gsDevTools: true,
       scrambleText: true,
       splitText: true
     }

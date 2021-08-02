@@ -1,7 +1,10 @@
 <template>
   <header>
     <div class="glyphs">
-      <div class="glyph-left">
+      <div 
+        class="glyph-left"
+        v-on:mouseover="glyphOne"
+      >
         <svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="alphaGlyph1">
           <path id="frameL" d="M11 1H1V101H11" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
@@ -43,17 +46,9 @@
           </g>
         </svg>
       </div>
-
-      <div class="glyph-right">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="30" height="30" fill="black"/>
-          <rect y="70" width="30" height="30" fill="black"/>
-          <rect x="70" width="30" height="30" fill="black"/>
-          <rect x="70" y="70" width="30" height="30" fill="black"/>
-          <circle cx="50" cy="50" r="5" fill="black"/>
-          <path d="M44 42H42V44" stroke="black"/>
-          <path d="M56 58L58 58L58 56" stroke="black"/>
-        </svg>
+      <div class="contact">
+        <h4 class="contact__title">Contact</h4>
+        <a href="mailto:eric@alphanumeric.io">Email</a>
       </div>
     </div>
     <h1 id="nameplate">Eric Frommelt</h1>
@@ -81,15 +76,23 @@
     grid-template-columns: minmax(0 auto) auto minmax(0 auto);
   }
 
+  .contact {
+    padding-right: 4rem;
+  }
+
+  .contact h4 { margin: 0; }
+  .contact a { color: #FF0005 }
+
   .glyphs {
     grid-column: 1 / span 3;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 4rem;
   }
 
-  .glyph-right {
-    display: none;
+  .glyph-left {
+    align-self: start;
+    padding-left: 4rem;
   }
 
   @media (min-width: 900px) {
@@ -97,19 +100,7 @@
       font-size: 4rem;
     }
 
-    .glyphs {
-      justify-content: space-between;
-    }
 
-    .glyph-left {
-      align-self: start;
-      padding-left: 4rem;
-    }
-
-    .glyph-right {
-      display: block;
-      padding-right: 4rem;
-    }
   } 
 </style>
 

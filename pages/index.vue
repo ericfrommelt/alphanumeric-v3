@@ -1,13 +1,12 @@
 <template>
   <div class="layout-wrapper">
-    <Intro @removeIntro="intro = true" />
     <div class="content-wrapper">
-      <LazyHeader v-if="intro" class="header" />
+      <Header class="header" />
     </div>
-    <LazyJobTitles v-if="intro" />
-    <LazyHello v-if="intro" />
-    <LazyProjects v-if="intro" />
-    <LazyThanks v-if="intro" />
+    <JobTitles />
+    <Hello />
+    <Projects />
+    <Thanks />
   </div>
 </template>
 

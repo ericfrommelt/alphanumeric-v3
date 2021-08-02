@@ -1,8 +1,11 @@
 <template>
   <section class="grid__wrapper">
     <div class="section__block"></div>
-    <p class="introduction"><span class="hello">Hello—</span><br />
-I’m a Design Technologist looking for my next role. I bridge the gap between design and engineering teams. I’m particularly good at <span class="highlight">designing</span> and <span class="highlight">building</span> highly visual interactive stories, exploring new interactions with motion, and architecting design systems. I’m driven by positive user experiences and mastery of craft.</p>
+    <div class="hello__wrap">
+      <div id="hello" class="introduction">Hello—</div>
+    </div>
+    <p class="introduction">
+      I’m a Design Technologist looking for my next role. I bridge the gap between design and engineering teams. I’m particularly good at <span class="highlight">designing</span> and <span class="highlight">building</span> highly visual interactive stories, exploring new interactions with motion, and architecting design systems. I’m driven by positive user experiences and mastery of craft.</p>
     <div class="fluent">
       <figure class="fluent__tech">
         <ul class="fluent__languages">
@@ -46,6 +49,38 @@ I’m a Design Technologist looking for my next role. I bridge the gap between d
   </section>
 </template>
 
+<script>
+  export default {
+    mounted() {
+      this.helloMotion()
+    },
+
+    methods: {
+      helloMotion() {
+        const SplitText = this.$SplitText
+        const CustomEase = this.$CustomEase
+        const helloTypeSplit = new SplitText("#hello", { type: "chars" })
+        const helloType = helloTypeSplit.chars.slice()
+
+        CustomEase.create("lineEase", "M0,0 C0.362,0 0.152,1 1,1")
+
+        this.$gsap.set(helloType, { y: +200, opacity: 1 })
+
+        const tl = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#hello",
+            start: "center bottom",
+            end: "+=500",
+            scrub: true
+          }
+        })
+
+        tl.to(helloType, { duration: .8, y: 0, opacity: 1, stagger: 0.01 })
+      }
+    }
+  }
+</script>
+
 <style scoped>
   section {
     margin-top: 12rem;
@@ -60,9 +95,17 @@ I’m a Design Technologist looking for my next role. I bridge the gap between d
     font-size: 1.4rem;
     font-weight: 400;
     grid-column: 2 / span 10;
+    margin-top: 0;
   }
 
-  .hello {
+  .hello__wrap {
+    grid-column: 2 / span 10;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+
+  #hello {
     font-style: italic;
   }
 
@@ -84,7 +127,7 @@ I’m a Design Technologist looking for my next role. I bridge the gap between d
 
   .fluent__languages {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-size: 1.5rem;
     font-family: ibm-plex-mono;
     font-weight: 700;

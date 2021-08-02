@@ -33,6 +33,7 @@
   .marquee {
     position: relative;
     width: 100%;
+    overflow-x: hidden;
   }
 
   .marquee-wrap {

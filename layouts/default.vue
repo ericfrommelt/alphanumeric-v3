@@ -17,7 +17,11 @@
     font-family: ibm-plex-sans, -apple-system, BlinkMacSystemFont, Segoe UI,
       Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif;
-    overflow-x: hidden;
+  }
+
+  body ::selection {
+    color: white;
+    background-color:#FF0005;
   }
 
   img {

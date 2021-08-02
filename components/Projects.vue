@@ -1,9 +1,13 @@
 <template>
   <section class="grid__wrapper projects">
     <div class="section__block"></div>
-    <h2>Projects—</h2>
+    <div class="projects__head__wrap">
+      <h2 id=projects__head>Projects—</h2>
+    </div>
     <!-- 01 Terminal Index -->
-    <span class="project__number">01</span>
+    <div class="project__number">
+      <div id="p1">01</div>
+    </div>
     <div class="project__details">
       <h3 class="project__title">Terminal Index</h3>
       <h4 class="project__subhead">Interaction sketchbook</h4>
@@ -29,7 +33,9 @@
     <div class="project__footer"></div>
 
     <!-- 02 HPE -->
-    <span class="project__number">02</span>
+    <div class="project__number">
+      <div id="p2">02</div>
+    </div>
     <div class="project__details">
       <h3 class="project__title">HPE</h3>
       <h4 class="project__subhead">Editorial Experiences</h4>
@@ -56,14 +62,16 @@
     <div class="project__footer"></div>
 
     <!-- 03 Vaporized Claims -->
-    <span class="project__number">03</span>
+    <div class="project__number">
+      <div id="p3">03</div>
+    </div>
     <div class="project__details">
       <h3 class="project__title">Vaporized Claims</h3>
       <h4 class="project__subhead">CSS Art</h4>
       <p class="project__role">Design + Development</p>
       <p class="project__description">I've been enamored with collage since childhood and saw an opportunity to experiment with the process utiliziing CSS grid, clip-path and simple animation. So much fun.</p>
       <div class="project__button">
-        <a href="#">View project</a>
+        <a href="https://www.vaporized.claims/">View project</a>
       </div>
       <div class="tools">
         <div class="subsection__block"></div>
@@ -81,12 +89,71 @@
   </section>
 </template>
 
+<script>
+  export default {
+    mounted() {
+      this.projectsMotion()
+    },
+
+    methods: {
+      projectsMotion() {
+        const SplitText = this.$SplitText
+        const CustomEase = this.$CustomEase
+        const projectsTypeSplit = new SplitText("#projects__head", { type: "chars", charsClass: "phead++" })
+        const projectsType = projectsTypeSplit.chars.slice()
+
+        CustomEase.create("lineEase", "M0,0 C0.362,0 0.152,1 1,1")
+
+        this.$gsap.set(projectsType, { y: +200, opacity: 1 })
+
+        const tl0 = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#projects__head",
+            start: "center bottom",
+            end: "+=500",
+            scrub: true
+          }
+        })
+        
+        const tl = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#p1",
+            start: "top bottom",
+            toggleClass: "active"
+          }
+        })
+
+
+        const tl2 = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#p2",
+            start: "top bottom",
+            toggleClass: "active"
+          }
+        })
+
+        const tl3 = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#p3",
+            start: "top bottom",
+            toggleClass: "active"
+          }
+        })
+
+        tl0.to(projectsType, { duration: .8, y: 0, opacity: 1, stagger: 0.01 })
+        tl.to("#p1", { duration: 2, scrambleText: { text: "01", chars: "ALPHANUMERIC01234567898"}})
+        tl2.to("#p2", { duration: 2, scrambleText: { text: "02", chars: "ALPHANUMERIC0123456789"}})
+        tl3.to("#p3", { duration: 2, scrambleText: { text: "03", chars: "ALPHANUMERIC0123456789"}})
+      }
+    }
+  } 
+</script>
+
 <style scoped>
   h2 {
     font-style: italic;
     font-size: 1.4rem;
     font-weight: 400;
-    grid-column: 2 / span 10;
   }
 
   h3 {
@@ -109,6 +176,16 @@
     margin-top: 6rem;
   }
 
+  .projects a {
+    color: #FF0005;
+  }
+
+  .projects__head__wrap {
+    grid-column: 2 / span 10;
+    display: inline-block;
+    overflow: hidden;
+  }
+
   .project__details {
     grid-column: 2 / span 10;
   }
@@ -120,16 +197,26 @@
 
   .project__footer {
     grid-column: 2 / span 10;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
   }
 
   .project__number {
     grid-column: 2 / span 10;
-    font-family: ibm-plex-sans-condensed;
+    font-family: ibm-plex-mono;
     font-size: 1rem;
     font-weight: 200;
     padding-right: 1rem;
     color: hsl(0, 0%, 70%);
+  }
+
+  #p1, #p2, #p3{
+    display: inline-block;
+    clip-path: polygon(0 120%, 100% 100%, 100% 100%, 0% 100%);
+    transition: all 1s cubic-bezier(.43,.01,.39,.99);
+  }
+
+  #p1.active, #p2.active, #p3.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
   .project__role {
@@ -152,6 +239,10 @@
 
     .project__details {
       grid-column: 2 / span 5;
+    }
+
+    .project__footer {
+      padding-bottom: 8rem;
     }
 
     .project__image, .project__video {

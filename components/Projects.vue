@@ -14,7 +14,7 @@
       <p class="project__role">Design + Development</p>
       <p class="project__description">I wanted to build a space where I could post small, isolated interaction design experiments on an ongoing basis.</p>
       <div class="project__button">
-        <a href="https://www.terminalindex.net/">Go to site</a>
+        <a href="https://www.terminalindex.net/">View project</a>
       </div>
       <div class="tools">
         <div class="subsection__block"></div>
@@ -42,7 +42,7 @@
       <p class="project__role">Design + Development</p>
       <p class="project__description">Editorial experience design and development for HPE.</p>
       <div class="project__button">
-        <a href="https://blissful-lichterman-3559c0.netlify.app/">Go to site</a>
+        <a href="https://blissful-lichterman-3559c0.netlify.app/">View project</a>
       </div>
       <div class="tools">
         <div class="subsection__block"></div>
@@ -84,6 +84,27 @@
     </div>
     <div class="project__video">
       <video src="VaporizedClaims.mp4" loop muted autoplay></video>
+    </div>
+    <div class="project__footer"></div>
+ 
+    <!-- 04 Illustration -->
+    <div class="project__number">
+      <div id="p4">04</div>
+    </div>
+    <div class="project__details">
+      <h3 class="project__title">Illustration</h3>
+      <p class="project__description">Occasionaly I get asked to illustrate technology and science stories.</p>
+    </div>
+    <div class="mini__folio">
+      <div class="styleshifters">
+        <nuxt-img src="styleshifters-2x.png" />
+      </div>
+      <div class="gametheory">
+        <nuxt-img src="DataCenterGameTheory.png" />
+      </div>
+      <div class="rift">
+        <nuxt-img src="oculus-rift-2x.png" />
+      </div>
     </div>
     <div class="project__footer"></div>
   </section>
@@ -139,11 +160,20 @@
             toggleClass: "active"
           }
         })
+        
+        const tl4 = this.$gsap.timeline({
+          scrollTrigger: {
+            trigger: "#p4",
+            start: "top bottom",
+            toggleClass: "active"
+          }
+        })
 
-        tl0.to(projectsType, { duration: .8, y: 0, opacity: 1, stagger: 0.01 })
+        tl0.to(projectsType, { duration: 1, y: 0, opacity: 1, stagger: 0.01 })
         tl.to("#p1", { duration: 2, scrambleText: { text: "01", chars: "ALPHANUMERIC01234567898"}})
         tl2.to("#p2", { duration: 2, scrambleText: { text: "02", chars: "ALPHANUMERIC0123456789"}})
         tl3.to("#p3", { duration: 2, scrambleText: { text: "03", chars: "ALPHANUMERIC0123456789"}})
+        tl4.to("#p4", { duration: 2, scrambleText: { text: "04", chars: "ALPHANUMERIC0123456789"}})
       }
     }
   } 
@@ -209,13 +239,13 @@
     color: hsl(0, 0%, 70%);
   }
 
-  #p1, #p2, #p3{
+  #p1, #p2, #p3, #p4{
     display: inline-block;
     clip-path: polygon(0 120%, 100% 100%, 100% 100%, 0% 100%);
     transition: all 1s cubic-bezier(.43,.01,.39,.99);
   }
 
-  #p1.active, #p2.active, #p3.active {
+  #p1.active, #p2.active, #p3.active, #p4.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 
@@ -231,11 +261,36 @@
   .tools__list li {
     padding-right: 1rem;
   }
+  
+  .mini__folio {
+      grid-column: 1 / span 12;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+  .gametheory, .styleshifters, .rift {
+      grid-column: 2 / span 10;
+    }
+
 
   @media (min-width: 900px) {
     h2 {
       font-size: 3.125rem;
     }
+
+    .gametheory {
+      grid-column: 7 / span 6;
+    }
+  
+    .styleshifters {
+      grid-column: 1 / span 4;
+      padding: 8rem 0;
+    }
+  
+    .rift {
+      grid-column: 2 / span 6;
+      padding: 8rem 0;
+    }   
 
     .project__details {
       grid-column: 2 / span 5;
@@ -253,6 +308,14 @@
       grid-column: 1;
       justify-self: end;
       font-size: 1.8rem;
+    }
+
+    .half_left {
+      grid-column: 1 / span 6;
+    }
+
+    .half_right {
+      grid-column: 7 / span 6;
     }
   }
 </style>

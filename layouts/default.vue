@@ -25,8 +25,20 @@
   }
 
   img {
-    max-width: 100%;
+  max-width: 100%;
+  }
+  img[width] {
+    width: auto; /* Defer to max-width */
+  }
+  img[width][height] {
+    height: auto; /* Preserve aspect ratio */
+  }
+
+  /* Let SVG scale without boundaries */
+  img[src$=".svg"] {
+    width: 100%;
     height: auto;
+    max-width: none;
   }
 
   a {

@@ -86,27 +86,6 @@
       <video src="VaporizedClaims.mp4" loop muted autoplay></video>
     </div>
     <div class="project__footer"></div>
- 
-    <!-- 04 Illustration -->
-    <div class="project__number">
-      <div id="p4">04</div>
-    </div>
-    <div class="project__details">
-      <h3 class="project__title">Illustration</h3>
-      <p class="project__description">Occasionaly I get asked to illustrate technology and science stories.</p>
-    </div>
-    <div class="mini__folio">
-      <div class="styleshifters">
-        <nuxt-img src="styleshifters-2x.png" />
-      </div>
-      <div class="gametheory">
-        <nuxt-img src="DataCenterGameTheory.png" />
-      </div>
-      <div class="rift">
-        <nuxt-img src="oculus-rift-2x.png" />
-      </div>
-    </div>
-    <div class="project__footer"></div>
   </section>
 </template>
 

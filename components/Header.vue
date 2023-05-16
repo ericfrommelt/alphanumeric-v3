@@ -16,9 +16,6 @@
         </svg>
       </div>
     </div>
-    <div class="portrait">
-      <img src="~/assets/DSCF0051.jpg">
-    </div>
   </header>
 </template>
 

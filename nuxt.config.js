@@ -20,8 +20,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://cloud.typography.com/7804816/6829232/css/fonts.css'},
-      { rel: 'stylesheet', type: 'text/css', href: 'https://use.typekit.net/beu6szp.css'}
+      { rel: 'preconnect', type: 'text/css', href: 'https://cdn.fonts.net'},
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.fonts.net/kit/8a5fe159-d1d4-4273-a8f2-0246bada0942/8a5fe159-d1d4-4273-a8f2-0246bada0942.css'}
     ]
   },
 
@@ -60,6 +60,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-unity-webgl'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -3,7 +3,6 @@
     <div class="content-wrapper">
       <Header class="header" />
     </div>
-    <JobTitles />
     <Hello />
     <Projects />
     <Thanks />
@@ -14,6 +13,7 @@
   .content-wrapper {
     display: grid;
     grid-template-columns: auto minmax(auto, 1440px) auto;
+    background-color: #0C26B0;
   }
 
   .header {

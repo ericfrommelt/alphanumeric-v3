@@ -27,7 +27,7 @@
   }
 
   a {
-    color: #FF0005;
+    color: #0C26B0;
   }
 
   @media (min-width: 900px) {

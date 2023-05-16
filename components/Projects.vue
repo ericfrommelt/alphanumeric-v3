@@ -4,43 +4,42 @@
     <div class="projects__head__wrap">
       <h2 id=projects__head>Projects—</h2>
     </div>
-    <!-- 01 Terminal Index -->
+    <!-- 01 Sports Mode -->
     <div class="project__number">
       <div id="p1">01</div>
     </div>
     <div class="project__details">
-      <h3 class="project__title">Terminal Index</h3>
-      <h4 class="project__subhead">Interaction sketchbook</h4>
-      <p class="project__role">Design + Development</p>
-      <p class="project__description">I wanted to build a space where I could post small, isolated interaction design experiments on an ongoing basis.</p>
+      <h3 class="project__title">Sports Mode</h3>
+      <h4 class="project__subhead">Prototype</h4>
+      <p class="project__role">Interaction Design + Development</p>
+      <p class="project__description">Sports Mode is a product feature that allows sports fans the option of tailoring their experience for watching multiple sports programs that are airing simultaneously. I worked on the interaction design and prototype build while partnering with my peers in Research to conduct user testing.</p>
+
       <div class="project__button">
-        <a href="https://www.terminalindex.net/">View project</a>
+        <s>
+          View project
+        </s>
       </div>
       <div class="tools">
         <div class="subsection__block"></div>
         <h5>Tools + technogy</h5>
         <ul class="tools__list">
-          <li>Vue</li>
-          <li>Nuxt</li>
-          <li>CSS</li>
-          <li>GSAP</li>
+          <li>Unity</li>
         </ul>
       </div>
     </div>
     <div class="project__video">
-      <video src="TerminalIndex.mp4" loop muted autoplay></video>
+      <video src="SportsMode.mp4" loop muted autoplay></video>
     </div>
     <div class="project__footer"></div>
-
     <!-- 02 HPE -->
     <div class="project__number">
       <div id="p2">02</div>
     </div>
     <div class="project__details">
       <h3 class="project__title">HPE</h3>
-      <h4 class="project__subhead">Editorial Experiences</h4>
+      <h4 class="project__subhead">Prototype</h4>
       <p class="project__role">Design + Development</p>
-      <p class="project__description">Editorial experience design and development for HPE.</p>
+      <p class="project__description">Editorial experience design and development.</p>
       <div class="project__button">
         <a href="https://blissful-lichterman-3559c0.netlify.app/">View project</a>
       </div>
@@ -61,9 +60,37 @@
     </div>
     <div class="project__footer"></div>
 
-    <!-- 03 Vaporized Claims -->
+    <!-- 03 Terminal Index -->
     <div class="project__number">
       <div id="p3">03</div>
+    </div>  
+    <div class="project__details">
+      <h3 class="project__title">Terminal Index</h3>
+      <h4 class="project__subhead">Interaction sketchbook</h4>
+      <p class="project__role">Design + Development</p>
+      <p class="project__description">I wanted to build a space where I could post small, isolated interaction design experiments on an ongoing basis.</p>
+      <div class="project__button">
+        <a href="https://www.terminalindex.net/">View project</a>
+      </div>  
+      <div class="tools">
+        <div class="subsection__block"></div>
+        <h5>Tools + technogy</h5>
+        <ul class="tools__list">
+          <li>Vue</li>
+          <li>Nuxt</li>
+          <li>CSS</li>
+          <li>GSAP</li>
+        </ul>  
+      </div>  
+    </div>  
+    <div class="project__video">
+      <video src="TerminalIndex.mp4" loop muted autoplay></video>
+    </div>  
+    <div class="project__footer"></div>
+
+    <!-- 04 Vaporized Claims -->
+    <div class="project__number">
+      <div id="p4">04</div>
     </div>
     <div class="project__details">
       <h3 class="project__title">Vaporized Claims</h3>
@@ -195,6 +222,10 @@
     overflow: hidden;
   }
 
+  .project__description {
+    padding: 0 4rem 0 0;
+  }
+
   .project__details {
     grid-column: 2 / span 10;
   }
@@ -211,8 +242,8 @@
 
   .project__number {
     grid-column: 2 / span 10;
-    font-family: ibm-plex-mono;
-    font-size: 1rem;
+    font-family: 'TTForsRegular';
+    font-size: .6rem;
     font-weight: 200;
     padding-right: 1rem;
     color: hsl(0, 0%, 70%);
@@ -286,7 +317,7 @@
     .project__number {
       grid-column: 1;
       justify-self: end;
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .half_left {

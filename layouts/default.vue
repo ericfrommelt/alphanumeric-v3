@@ -14,7 +14,7 @@
     color: var(--primary-color-dark);
     padding: 0;
     margin: 0;
-    font-family: ibm-plex-sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+    font-family: 'TTForsRegular', -apple-system, BlinkMacSystemFont, Segoe UI,
       Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
       sans-serif;
   }
@@ -67,7 +67,7 @@
   .section__block {
     width: 22px;
     height: 5px;
-    background-color: #FF0005;
+    background-color: #F6CA45;
     grid-column: 2 / span 11;
   }
 

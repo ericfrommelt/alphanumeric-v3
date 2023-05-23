@@ -22,10 +22,12 @@
 <style scoped>
   #namplate, #job__title, #job__titleB {
     font-size: 3rem;
+    margin-left: 0;
+    margin-right: 0;
   }
   .arrow__down {
     grid-column: 2 / span 10;
-    margin: 8rem 0 6rem 0;
+    margin: 4rem 0 4rem 0;
   }
   .nameplate__wrap {
     grid-column: 2 / span 10;
@@ -38,7 +40,7 @@
     font-family: 'TTForsBold', sans-serif;
     font-style: normal;
     padding: 2rem 0 0 0;
-    line-height: 6rem;
+    line-height: 8rem;
   }
 
   .jobtitle__wrap {

@@ -2,7 +2,7 @@
   <section class="grid__wrapper">
     <div class="section__block"></div>
     <div class="hello__wrap">
-      <div id="hello" class="introduction">Hello—</div>
+      <div id="hello" class="introduction">Hello —</div>
     </div>
     <p class="introduction">
       I’m a Design Technologist passionate about mixing storytelling and interaction design while bridging the gap between design and engineering teams. I design and prototype product experiences from mobile and web to 10ft and beyond — driven by positive user experiences, mastery of craft, and insatiable curiosity.</p>
@@ -50,7 +50,7 @@
           </li>
         </ul>
       </figure>
-      <p class="fluent__text">I’m fluent with modern tools and technology—from Figma and After Effects to React, Vue, and Unity.</p>
+      <p class="fluent__text">I’m fluent with modern tools and technology — from Figma and After Effects to React, Vue, and Unity.</p>
     </div>
   </section>
 </template>

@@ -67,7 +67,7 @@
   .section__block {
     width: 22px;
     height: 5px;
-    background-color: #F6CA45;
+    background-color: #0C26B0;
     grid-column: 2 / span 11;
   }
 
